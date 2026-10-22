@@ -1,0 +1,8 @@
+{
+  "name": "royal-ember-restaurant",
+  "version": "1.0.0",
+  "description": "Luxury restaurant ordering website starter with Express and MongoDB",
+  "main": "server.js",
+  "scripts": {"start": "node server.js", "dev": "node --watch server.js"},
+  "dependencies": {"dotenv": "^16.4.7", "express": "^4.21.2", "mongoose": "^8.9.5"}
+}
