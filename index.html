@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fffaf0">
+<title>Food Lab — Frozen Foods & Desi Favorites in Lahore</title>
+<meta name="description" content="Premium frozen chicken snacks and authentic desi favorites in Lahore. Order nuggets, kababs, wings and patties online — fast, fresh and family-friendly.">
+<meta property="og:title" content="Food Lab — Frozen Foods & Desi Favorites">
+<meta property="og:description" content="Good food, made easy. Premium frozen snacks and desi favorites, delivered in Lahore.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<script src="js/boot.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- first-visit brand curtain (only shown when JS is on, once per session) -->
+<div class="curtain" id="curtain" aria-hidden="true"><img src="assets/food-lab-logo.webp" alt="" width="120" height="120"></div>
+
+<div class="topline">QUALITY <b>·</b> TASTE <b>·</b> CARE &nbsp; | &nbsp; Made for happy family meals</div>
+
+<header id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Food Lab home"><img src="assets/food-lab-logo.webp" alt="Food Lab Frozen Foods logo" width="100" height="70"></a>
+    <nav class="links" id="navLinks" aria-label="Main">
+      <a href="#frozen">Frozen Foods</a>
+      <a href="#desi">Desi Food</a>
+      <a href="#about">About Us</a>
+      <a href="#location">Location</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="cart-btn" id="cartBtn" type="button" aria-label="Open your order" aria-haspopup="dialog">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span class="cart-count" id="cartCount" hidden>0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" data-hero data-d="0">Fresh taste, ready when you are</span>
+      <h1 aria-label="Good food. Made easy.">
+        <span class="line"><span data-hero-line data-d="1">Good food.</span></span>
+        <span class="line"><span data-hero-line data-d="2" class="accent">Made easy.</span></span>
+      </h1>
+      <p data-hero data-d="3">Premium frozen snacks and authentic desi favorites, prepared for busy days and family moments. Great taste, trusted quality, right at your doorstep.</p>
+      <div class="actions" data-hero data-d="4">
+        <a class="btn orange" href="#frozen">Shop frozen foods <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn outline" href="#desi">Explore desi food</a>
+      </div>
+      <div class="hero-meta" data-hero data-d="5">
+        <div class="mini-icons" aria-hidden="true"><span>✓</span><span>✦</span><span>⌂</span></div>
+        <span>Quality you can taste in every bite</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="art-frame" id="heroFrame"><img id="heroImg" src="assets/frozen-nuggets.png" alt="Golden crispy chicken nuggets served with dipping sauce" width="808" height="544" fetchpriority="high"></div>
+      <div class="stamp" aria-hidden="true"><span>Fresh<br>Frozen<br>Delicious</span></div>
+      <div class="image-caption" data-hero data-d="6">Frozen fresh<small>Quick, easy, delicious.</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="benefits"><div class="wrap benefits-row">
+  <div class="benefit reveal" data-i="0"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-4 7-11V5l-7-3-7 3v5c0 7 7 11 7 11Z"/><path d="m9 12 2 2 4-4"/></svg>Quality ingredients</div>
+  <div class="benefit reveal" data-i="1"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20h16M6 20V9l6-5 6 5v11M9 12h6M9 16h6"/></svg>Easy family meals</div>
+  <div class="benefit reveal" data-i="2"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg>Made for your freezer</div>
+</div></div>
+
+<!-- ============ PRODUCTS (loaded from /api/products) ============ -->
+<section class="products" id="frozen"><div class="wrap">
+  <div class="section-head reveal"><span class="eyebrow">Straight from the freezer to the table</span><h2>Frozen Foods</h2><p>Freshly prepared frozen favorites. Add what you like — we'll confirm your order on WhatsApp.</p></div>
+  <div class="product-grid" id="productGrid" aria-live="polite" aria-busy="true"></div>
+</div></section>
+
+<!-- ============ DESI ============ -->
+<section class="desi" id="desi"><div class="wrap desi-grid">
+  <div class="desi-img reveal" data-reveal="left"><img src="assets/homemade-biryani.png" alt="Traditional chicken biryani with fragrant rice, herbs and spices" loading="lazy" width="552" height="562"></div>
+  <div class="desi-copy reveal" data-reveal="right">
+    <span class="eyebrow">A taste of home</span>
+    <h2>Desi food,<br>full of love.</h2>
+    <p>From fragrant biryani to comforting family favorites, bring the warmth of desi flavor to your table. Made for sharing, celebrating, and going back for seconds.</p>
+    <span class="desi-badge">DESI FAVORITES · BIG FLAVOR</span>
+    <div><a class="btn" data-wa="Assalam-o-alaikum Food Lab, please share your desi food menu." href="#contact">Ask about desi menu <span class="arrow" aria-hidden="true">→</span></a></div>
+  </div>
+</div></section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about"><div class="wrap">
+  <div class="about-box reveal" data-reveal="zoom">
+    <span class="eyebrow">Welcome to Food Lab</span>
+    <h2>Good food for real life.</h2>
+    <p>We bring together convenient frozen favorites and the comforting flavors we grew up loving. Whether it's a quick snack or a desi family meal, we're here to make food time easier and tastier.</p>
+    <a class="btn orange" data-wa="" href="#contact" target="_blank" rel="noopener">Talk to us on WhatsApp <span class="arrow" aria-hidden="true">↗</span></a>
+  </div>
+</div></section>
+
+<!-- ============ LOCATION ============ -->
+<section class="location" id="location"><div class="wrap location-grid">
+  <div class="location-copy reveal" data-reveal="left">
+    <span class="eyebrow">Find Food Lab</span>
+    <h2>Come visit us.</h2>
+    <p>Use the map to find our area. Message us on WhatsApp and we'll guide you to the exact spot.</p>
+    <div class="location-address">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.3"/></svg>
+      <div><strong>Food Lab</strong><span>Hajvery Housing Scheme, Lahore, Punjab, Pakistan<br><small>This map shows the housing scheme area, not an exact shop pin.</small></span></div>
+    </div>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hajvery+Housing+Scheme%2C+Lahore%2C+Punjab%2C+Pakistan" target="_blank" rel="noopener">Open in Google Maps <span class="arrow" aria-hidden="true">↗</span></a>
+  </div>
+  <iframe class="map-frame reveal" data-reveal="right" title="Map of Hajvery Housing Scheme, Lahore, Punjab, Pakistan" loading="lazy" src="https://maps.google.com/maps?q=Hajvery%20Housing%20Scheme%2C%20Lahore%2C%20Punjab%2C%20Pakistan&t=&z=12&ie=UTF8&iwloc=&output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div></section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact"><div class="wrap contact-grid">
+  <div class="contact-box reveal" data-reveal="left">
+    <div>
+      <h3>Ready to place an order?</h3>
+      <p>Add items to your order above, or message Food Lab on WhatsApp for product details, availability and prices.</p>
+    </div>
+    <a class="btn wa" data-wa="Assalam-o-alaikum Food Lab, I'd like to place an order." href="#contact" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.7A8.5 8.5 0 1 1 20.5 11.5Z"/><path d="M8.5 8.2c.4 2.8 2.5 4.9 5.3 5.3l1-1.1 2 .9c-.2 1.2-1.1 1.9-2.3 1.8-3.9-.5-6.9-3.5-7.4-7.4-.1-1.2.6-2.1 1.8-2.3l.9 2-1.3.8Z"/></svg>
+      WhatsApp: 03065158738
+    </a>
+  </div>
+  <form class="contact-form reveal" data-reveal="right" id="contactForm" novalidate>
+    <h3>Send us a message</h3>
+    <div class="field"><label for="cName">Your name</label><input id="cName" name="name" type="text" autocomplete="name" maxlength="80" required></div>
+    <div class="field"><label for="cPhone">Phone / WhatsApp</label><input id="cPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0300 1234567" maxlength="20" required></div>
+    <div class="field"><label for="cMsg">Message</label><textarea id="cMsg" name="message" rows="3" maxlength="1000" required></textarea></div>
+    <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="form-msg" id="contactMsg" role="status"></p>
+    <button class="btn" type="submit"><span class="btn-label">Send on WhatsApp</span><span class="spinner" aria-hidden="true"></span></button>
+  </form>
+</div></section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-main">
+      <div class="footer-about">
+        <a class="footer-brand" href="#home" aria-label="Food Lab home"><img src="assets/food-lab-logo.webp" alt="Food Lab logo" width="68" height="58"><span>Food Lab</span></a>
+        <p class="footer-tagline">Frozen favorites and comforting desi flavors, prepared to make family mealtimes easier and tastier.</p>
+        <span class="footer-kicker">Quality · Taste · Care</span>
+      </div>
+      <div>
+        <div class="footer-heading">Quick Links</div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#frozen">Frozen Foods</a><a href="#desi">Desi Food</a><a href="#about">About Food Lab</a><a href="#location">Our Location</a>
+        </nav>
+      </div>
+      <div class="footer-contact">
+        <div><div class="footer-heading">Let’s get your order started</div><p>Message us on WhatsApp for orders, availability and product details.</p></div>
+        <a class="footer-wa" data-wa="" href="#contact" target="_blank" rel="noopener" aria-label="Chat with Food Lab on WhatsApp">WhatsApp: 03065158738 <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year">2026</span> <strong>Food Lab</strong>. All rights reserved.</span><span class="footer-social-note">Made with care for your family table.</span></div>
+  </div>
+</footer>
+
+<!-- ============ ORDER DRAWER ============ -->
+<div class="overlay" id="overlay" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
+  <div class="drawer-head">
+    <h2 id="drawerTitle">Your order</h2>
+    <button class="icon-btn" id="drawerClose" type="button" aria-label="Close your order"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+
+  <div class="drawer-body" id="drawerBody">
+    <div class="cart-empty" id="cartEmpty">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+      <p>Your order is empty.</p>
+      <a class="btn" href="#frozen" data-close-drawer>Browse frozen foods</a>
+    </div>
+
+    <ul class="cart-list" id="cartList"></ul>
+
+    <form class="checkout" id="checkoutForm" novalidate hidden>
+      <div class="cart-total"><span>Total</span><strong id="cartTotal">Rs. 0</strong></div>
+      <p class="muted small">Delivery charges (if any) are confirmed with you on WhatsApp. Payment on delivery.</p>
+      <div class="field"><label for="oName">Your name</label><input id="oName" name="name" type="text" autocomplete="name" maxlength="80" required></div>
+      <div class="field"><label for="oPhone">Phone / WhatsApp</label><input id="oPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0300 1234567" maxlength="20" required></div>
+      <div class="field"><label for="oAddress">Delivery address</label><textarea id="oAddress" name="address" rows="2" autocomplete="street-address" maxlength="300" required></textarea></div>
+      <div class="field"><label for="oNotes">Notes <span class="muted">(optional)</span></label><input id="oNotes" name="notes" type="text" maxlength="300"></div>
+      <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="form-msg" id="orderMsg" role="alert"></p>
+      <button class="btn orange block" type="submit"><span class="btn-label">Send order on WhatsApp</span><span class="spinner" aria-hidden="true"></span></button>
+    </form>
+
+    <div class="order-done" id="orderDone" hidden>
+      <svg class="check" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="none"/><path fill="none" d="M15 27l8 8 14-16"/></svg>
+      <h3>Almost done!</h3>
+      <p>WhatsApp should have opened with your order.</p>
+      <p class="muted small">Press <strong>Send</strong> in the chat so we can confirm delivery time and charges. If nothing opened, tap the button below.</p>
+      <a class="btn wa block" id="orderWa" href="#" target="_blank" rel="noopener">Open WhatsApp <span class="arrow" aria-hidden="true">↗</span></a>
+      <button class="btn outline block" type="button" id="orderAgain">Continue browsing</button>
+    </div>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/products.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
